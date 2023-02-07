@@ -8,21 +8,21 @@ helmCharts:
     repo: https://kubernetes.github.io/ingress-nginx
     valuesFile: values.yaml
 
-configurations:
-  - var_references.yaml
+# configurations:
+#   - var_references.yaml
 
-vars:
-  - name: INGRESS_IP_ADDRESS
-    objref:
-      kind: ConfigMap
-      name: argocd-seed
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.INGRESS_IP_ADDRESS
-  - name: INGRESS_RESOURCE_GROUP
-    objref:
-      kind: ConfigMap
-      name: argocd-seed
-      apiVersion: v1
-    fieldref:
-      fieldpath: data.INGRESS_RESOURCE_GROUP
+# vars:
+#   - name: INGRESS_IP_ADDRESS
+#     objref:
+#       kind: ConfigMap
+#       name: argocd-seed
+#       apiVersion: v1
+#     fieldref:
+#       fieldpath: data.INGRESS_IP_ADDRESS
+#   - name: INGRESS_RESOURCE_GROUP
+#     objref:
+#       kind: ConfigMap
+#       name: argocd-seed
+#       apiVersion: v1
+#     fieldref:
+#       fieldpath: data.INGRESS_RESOURCE_GROUP
