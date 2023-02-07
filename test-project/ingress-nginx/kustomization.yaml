@@ -7,3 +7,6 @@ helmCharts:
     version: 4.3.0
     repo: https://kubernetes.github.io/ingress-nginx
     valuesFile: values.yaml
+
+configurations:
+  - var_references.yaml
