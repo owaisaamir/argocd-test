@@ -1,0 +1,22 @@
+nameOverride: nginx
+controller:
+  replicaCount: 3
+  minAvailable: 2
+  admissionWebhooks:
+    enabled: false
+  service:
+    loadBalancerIP: $(ingress_ip_address)
+    externalTrafficPolicy: "Local"
+    annotations:
+      service.beta.kubernetes.io/azure-load-balancer-resource-group: $(ingress_resource_group)
+  metrics:
+    enabled: true
+  ingressClassResource:
+    default: true
+  labels:
+    app: ingress-nginx
+    component: controller
+  config:
+    keep-alive: "100"
+    log-format-escape-json: "true"
+    map-hash-bucket-size: "128"

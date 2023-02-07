@@ -1,0 +1,9 @@
+---
+namespace: ingress-nginx
+
+helmCharts:
+  - name: ingress-nginx
+    releaseName: ingress
+    version: 4.3.0
+    repo: https://kubernetes.github.io/ingress-nginx
+    valuesFile: values.yaml
