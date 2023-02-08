@@ -11,23 +11,23 @@ helmCharts:
 configurations:
   - var_references.yaml
 
-# configMapGenerator:
-# - name: argocd-plant
-#   envs: [environment-properties.env]
-#   behavior: create
+configMapGenerator:
+- name: argocd-plant
+  envs: [environment-properties.env]
+  behavior: create
 
-# vars:
-#   - name: INGRESS_IP_ADDRESS
-#     objref:
-#       kind: ConfigMap
-#       name: argocd-plant
-#       apiVersion: v1
-#     fieldref:
-#       fieldpath: data.INGRESS_IP_ADDRESS
-#   - name: INGRESS_RESOURCE_GROUP
-#     objref:
-#       kind: ConfigMap
-#       name: argocd-plant
-#       apiVersion: v1
-#     fieldref:
-#       fieldpath: data.INGRESS_RESOURCE_GROUP
+vars:
+  - name: INGRESS_IP_ADDRESS
+    objref:
+      kind: ConfigMap
+      name: argocd-plant
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.INGRESS_IP_ADDRESS
+  - name: INGRESS_RESOURCE_GROUP
+    objref:
+      kind: ConfigMap
+      name: argocd-plant
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.INGRESS_RESOURCE_GROUP
