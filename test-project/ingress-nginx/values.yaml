@@ -5,10 +5,10 @@ controller:
   admissionWebhooks:
     enabled: false
   service:
-    loadBalancerIP: $(ARGOCD_ENV_INGRESS_IP_ADDRESS)
+    loadBalancerIP: $INGRESS_IP_ADDRESS
     externalTrafficPolicy: "Local"
     annotations:
-      service.beta.kubernetes.io/azure-load-balancer-resource-group: $(ARGOCD_ENV_INGRESS_RESOURCE_GROUP)
+      service.beta.kubernetes.io/azure-load-balancer-resource-group: $INGRESS_RESOURCE_GROUP
   metrics:
     enabled: true
   ingressClassResource:
