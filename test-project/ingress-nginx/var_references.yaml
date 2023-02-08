@@ -1,6 +1,8 @@
 ---
 varReference:
   - kind: Service
+    name: ingress-nginx-controller
     path: metadata/annotations/service\\.beta\\.kubernetes\\.io/azure-load-balancer-resource-group
   - kind: Service
+    name: ingress-nginx-controller
     path: spec/loadBalancerIP
